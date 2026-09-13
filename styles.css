@@ -1,0 +1,207 @@
+/* Age of Rivalry — legal pages.
+   The game is a dark slate interface over a political map, with gold used only
+   for headings and emphasis. These pages use the same three values, taken from
+   UIFactory: Ink #13212E, Panel #1B2E3B, Gold #EDC775. */
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  --ground: #0d1822;
+  --ground-deep: #091219;
+  --ink: #13212e;
+  --panel: #1b2e3b;
+  --raised: #2b404d;
+  --text: #edede0;
+  --muted: #94b0bd;
+  --gold: #edc775;
+  --gold-dim: rgba(237, 199, 117, 0.42);
+  --gold-line: rgba(237, 199, 117, 0.24);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1100px 640px at 50% -10%, #1a2c3a 0%, var(--ground) 58%, var(--ground-deep) 100%);
+  color: var(--text);
+  font-family: "Noto Sans", "Segoe UI", system-ui, sans-serif;
+  line-height: 1.66;
+  font-size: 17px;
+}
+
+.container {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 36px 18px 72px;
+}
+
+/* --- the header plate, the game's title block ----------------------------- */
+
+.plate {
+  background: var(--ink);
+  border: 1px solid var(--gold-line);
+  border-radius: 6px;
+  padding: 28px 28px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.plate::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 0 0 6px 6px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.plate h1 {
+  margin: 0 0 12px;
+  font-weight: 700;
+  font-size: clamp(30px, 6.4vw, 46px);
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+
+.lead { margin: 0; color: var(--muted); font-size: 16px; }
+
+.stamp {
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: #6f8898;
+  letter-spacing: 0.03em;
+}
+
+/* --- the panels the text sits on ------------------------------------------ */
+
+.panel {
+  background: var(--panel);
+  border: 1px solid rgba(237, 199, 117, 0.16);
+  border-radius: 6px;
+  padding: 28px 30px 32px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.38);
+}
+
+.panel + .panel { margin-top: 22px; }
+
+h2 {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 34px 0 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--gold-line);
+  color: var(--gold);
+}
+
+.panel > h2:first-child { margin-top: 0; }
+
+h3 { font-size: 17px; margin: 22px 0 6px; color: var(--text); }
+
+p { margin: 0 0 14px; }
+
+ul { margin: 0 0 16px; padding-left: 22px; }
+
+li { margin-bottom: 8px; }
+
+strong { color: #fff6e2; font-weight: 600; }
+
+code {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.92em;
+  background: rgba(237, 199, 117, 0.09);
+  border: 1px solid rgba(237, 199, 117, 0.2);
+  border-radius: 3px;
+  padding: 1px 5px;
+  color: #f2dcae;
+}
+
+a { color: var(--gold); text-underline-offset: 3px; }
+
+a:hover { color: #fbe0a8; }
+
+/* --- credit entries ------------------------------------------------------- */
+
+.credit {
+  border-left: 3px solid var(--gold-dim);
+  padding: 2px 0 2px 16px;
+  margin: 0 0 20px;
+}
+
+.credit p { margin: 0 0 6px; }
+
+.credit .what {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+
+.quote {
+  background: var(--ink);
+  border: 1px solid rgba(237, 199, 117, 0.16);
+  border-radius: 4px;
+  padding: 13px 15px;
+  font-size: 15px;
+  color: #d8e2e8;
+  margin: 0 0 12px;
+}
+
+/* --- links between the two pages, styled as the game's buttons ------------ */
+
+.nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+
+.nav a {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--raised);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 10px 18px;
+}
+
+.nav a:hover { background: #35505f; }
+
+.nav a[aria-current="page"] {
+  background: var(--gold);
+  color: #1a2732;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+  color: #6f8898;
+  font-size: 13px;
+}
+
+footer a { color: var(--gold-dim); }
+
+footer a:hover { color: var(--gold); }
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .panel { padding: 22px 18px 26px; }
+  .plate { padding: 22px 18px 20px; }
+}
